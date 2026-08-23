@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel-ai"
+version = "0.1.0"
+description = "Foundation for an intelligent transaction-risk investigation platform."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Sentinel AI Contributors" },
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
