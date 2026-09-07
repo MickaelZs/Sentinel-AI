@@ -76,6 +76,17 @@ The output is `data/synthetic_transactions.csv`; `/data/` is ignored by Git.
 Its `is_fraud` column is synthetic research-only ground truth and is not part of
 the operational database model.
 
+## Exploratory analysis
+
+Reproducible EDA for the canonical synthetic dataset can be run with:
+
+```powershell
+.venv\Scripts\python.exe scripts\run_eda.py --rows 10000 --seed 42
+```
+
+The documented findings and future feature/split recommendations are in
+[`docs/eda.md`](docs/eda.md). No Machine Learning model is implemented.
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -86,7 +97,8 @@ committed to this repository.
 
 - Implemented: Git repository, Python package layout, documentation,
   architecture boundaries, FastAPI application foundation, `GET /health`, and
-  PostgreSQL persistence foundation, and synthetic dataset pipeline.
+  PostgreSQL persistence foundation, synthetic dataset pipeline, and
+  reproducible exploratory analysis.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
