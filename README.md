@@ -63,6 +63,19 @@ database you explicitly control:
 .venv\Scripts\alembic.exe upgrade head
 ```
 
+## Synthetic data
+
+The project provides a 100% synthetic, reproducible transaction dataset for
+future EDA and ML research. Generate the default 10,000 rows with:
+
+```powershell
+.venv\Scripts\python.exe scripts\generate_dataset.py --rows 10000 --seed 42
+```
+
+The output is `data/synthetic_transactions.csv`; `/data/` is ignored by Git.
+Its `is_fraud` column is synthetic research-only ground truth and is not part of
+the operational database model.
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -73,7 +86,7 @@ committed to this repository.
 
 - Implemented: Git repository, Python package layout, documentation,
   architecture boundaries, FastAPI application foundation, `GET /health`, and
-  PostgreSQL persistence foundation.
+  PostgreSQL persistence foundation, and synthetic dataset pipeline.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
