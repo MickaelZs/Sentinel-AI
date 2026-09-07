@@ -123,6 +123,17 @@ with:
 The selection policy, frozen test results, and limitations are documented in
 [`docs/threshold-evaluation.md`](docs/threshold-evaluation.md).
 
+## Model artifact management
+
+Build the local auditable Logistic Regression artifact with:
+
+```powershell
+.venv\Scripts\python.exe scripts\build_model_artifact.py --rows 10000 --seed 42
+```
+
+Its metadata, integrity policy, and trusted-source security warning are in
+[`docs/model-artifacts.md`](docs/model-artifacts.md).
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -135,7 +146,8 @@ committed to this repository.
   architecture boundaries, FastAPI application foundation, `GET /health`, and
   PostgreSQL persistence foundation, synthetic dataset pipeline, reproducible
   exploratory analysis, Logistic Regression baseline, and fixed tree-model
-  comparison and validation-based threshold evaluation.
+  comparison, validation-based threshold evaluation, and local model artifact
+  management.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
