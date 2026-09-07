@@ -70,7 +70,7 @@ AP; HistGradientBoosting has -0.0315 ROC-AUC and -0.0104 AP.
 
 The validation confusion matrices `(TN, FP, FN, TP)` are Logistic Regression
 `(1016, 472, 6, 6)`, Random Forest `(1383, 105, 10, 2)`, and
-HistGradientBoosting `(1458, 30, 12, 0)`. Test matrices are Logistic Regression
+HistGradientBoosting `(1435, 53, 12, 0)`. Test matrices are Logistic Regression
 `(1014, 461, 8, 17)`, Random Forest `(1371, 104, 23, 2)`, and
 HistGradientBoosting `(1426, 49, 23, 2)`.
 

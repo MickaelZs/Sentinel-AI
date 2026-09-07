@@ -111,6 +111,18 @@ The reproducible results and their limitations are in
 [`docs/model-comparison.md`](docs/model-comparison.md). This does not implement
 a production fraud model.
 
+## Threshold evaluation
+
+Validation-only operational threshold analysis for the fixed models can be run
+with:
+
+```powershell
+.venv\Scripts\python.exe scripts\evaluate_thresholds.py --rows 10000 --seed 42
+```
+
+The selection policy, frozen test results, and limitations are documented in
+[`docs/threshold-evaluation.md`](docs/threshold-evaluation.md).
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -123,7 +135,7 @@ committed to this repository.
   architecture boundaries, FastAPI application foundation, `GET /health`, and
   PostgreSQL persistence foundation, synthetic dataset pipeline, reproducible
   exploratory analysis, Logistic Regression baseline, and fixed tree-model
-  comparison.
+  comparison and validation-based threshold evaluation.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
