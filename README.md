@@ -98,6 +98,19 @@ The reproducible Logistic Regression baseline can be executed with:
 Its experimental configuration, metrics, and limitations are documented in
 [`docs/ml-baseline.md`](docs/ml-baseline.md). It is not a production model.
 
+## Model comparison
+
+The Logistic Regression baseline can be compared fairly with fixed Random
+Forest and HistGradientBoosting challengers using the same temporal protocol:
+
+```powershell
+.venv\Scripts\python.exe scripts\compare_models.py --rows 10000 --seed 42
+```
+
+The reproducible results and their limitations are in
+[`docs/model-comparison.md`](docs/model-comparison.md). This does not implement
+a production fraud model.
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -108,8 +121,9 @@ committed to this repository.
 
 - Implemented: Git repository, Python package layout, documentation,
   architecture boundaries, FastAPI application foundation, `GET /health`, and
-  PostgreSQL persistence foundation, synthetic dataset pipeline, and
-  reproducible exploratory analysis and Logistic Regression baseline.
+  PostgreSQL persistence foundation, synthetic dataset pipeline, reproducible
+  exploratory analysis, Logistic Regression baseline, and fixed tree-model
+  comparison.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
