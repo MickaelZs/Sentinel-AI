@@ -33,3 +33,20 @@ class TransactionRiskResponse(BaseModel):
     threshold: float = Field(ge=0, le=1)
     model_name: str
     artifact_version: str
+
+
+class RiskReasonResponse(BaseModel):
+    """A non-causal local model signal for one original request feature."""
+
+    code: str
+    feature: str
+    value: str | int | float | bool
+    direction: str
+    contribution: float
+
+
+class TransactionRiskExplanationResponse(TransactionRiskResponse):
+    """Score plus deterministic local Logistic Regression reason codes."""
+
+    risk_increasing_factors: list[RiskReasonResponse]
+    risk_decreasing_factors: list[RiskReasonResponse]

@@ -9,6 +9,11 @@ from threading import Lock
 import numpy as np
 import pandas as pd
 
+from sentinel_ai.inference.explainability import (
+    ExplainabilityError,
+    LogisticExplanation,
+    explain_logistic_regression,
+)
 from sentinel_ai.inference.schemas import TransactionRiskRequest
 from sentinel_ai.ml.artifacts import (
     ArtifactError,
@@ -102,3 +107,20 @@ class ModelInferenceService:
             model_name=artifact.metadata.model_name,
             artifact_version=artifact.metadata.artifact_version,
         )
+
+    def explain(
+        self, request: TransactionRiskRequest
+    ) -> tuple[RiskScore, LogisticExplanation]:
+        """Return a score and its deterministic local Logistic Regression explanation."""
+        score = self.score(request)
+        artifact = self._load()
+        try:
+            explanation = explain_logistic_regression(
+                artifact,
+                self._feature_frame(request),
+                request.model_dump(),
+                score.probability,
+            )
+        except (ExplainabilityError, ValueError) as error:
+            raise ModelUnavailableError("model artifact unavailable") from error
+        return score, explanation

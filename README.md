@@ -142,8 +142,10 @@ After building the local artifact, start the API with:
 .venv\Scripts\uvicorn.exe sentinel_ai.app:app --app-dir src --reload
 ```
 
-The experimental scoring endpoint is `POST /api/risk/score`; see
-[`docs/inference-api.md`](docs/inference-api.md) for its contract and behavior.
+The experimental scoring endpoint is `POST /api/risk/score`; deterministic
+local explanation is available at `POST /api/risk/explain`. See
+[`docs/inference-api.md`](docs/inference-api.md) and
+[`docs/explainability.md`](docs/explainability.md) for their contracts.
 
 ## Data policy
 
