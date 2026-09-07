@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     environment: str = "development"
     debug: bool = False
     database_url: str | None = Field(default=None, validation_alias="DATABASE_URL")
+    model_artifact_path: str = Field(
+        default="artifacts/models/sentinel-logistic-baseline-v1",
+        validation_alias="MODEL_ARTIFACT_PATH",
+    )
 
 
 settings = Settings()

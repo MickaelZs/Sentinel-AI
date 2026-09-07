@@ -134,6 +134,17 @@ Build the local auditable Logistic Regression artifact with:
 Its metadata, integrity policy, and trusted-source security warning are in
 [`docs/model-artifacts.md`](docs/model-artifacts.md).
 
+## Risk scoring API
+
+After building the local artifact, start the API with:
+
+```powershell
+.venv\Scripts\uvicorn.exe sentinel_ai.app:app --app-dir src --reload
+```
+
+The experimental scoring endpoint is `POST /api/risk/score`; see
+[`docs/inference-api.md`](docs/inference-api.md) for its contract and behavior.
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
