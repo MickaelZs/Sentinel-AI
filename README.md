@@ -85,7 +85,18 @@ Reproducible EDA for the canonical synthetic dataset can be run with:
 ```
 
 The documented findings and future feature/split recommendations are in
-[`docs/eda.md`](docs/eda.md). No Machine Learning model is implemented.
+[`docs/eda.md`](docs/eda.md). The EDA itself does not train models.
+
+## Machine-learning baseline
+
+The reproducible Logistic Regression baseline can be executed with:
+
+```powershell
+.venv\Scripts\python.exe scripts\train_baseline.py --rows 10000 --seed 42
+```
+
+Its experimental configuration, metrics, and limitations are documented in
+[`docs/ml-baseline.md`](docs/ml-baseline.md). It is not a production model.
 
 ## Data policy
 
@@ -98,7 +109,7 @@ committed to this repository.
 - Implemented: Git repository, Python package layout, documentation,
   architecture boundaries, FastAPI application foundation, `GET /health`, and
   PostgreSQL persistence foundation, synthetic dataset pipeline, and
-  reproducible exploratory analysis.
+  reproducible exploratory analysis and Logistic Regression baseline.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
