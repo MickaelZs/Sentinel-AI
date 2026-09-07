@@ -29,9 +29,9 @@ env/
 secrets/
 
 # Data and machine-learning artifacts
-data/
-models/
-artifacts/
+/data/
+/models/
+/artifacts/
 *.joblib
 *.pkl
 *.pickle

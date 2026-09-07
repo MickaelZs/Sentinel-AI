@@ -13,8 +13,12 @@ authors = [
   { name = "Sentinel AI Contributors" },
 ]
 dependencies = [
+  "alembic>=1.19.2",
   "fastapi>=0.141.1",
   "pydantic>=2.13.5,<3",
+  "pydantic-settings>=2.15.0",
+  "psycopg>=3.3.5",
+  "sqlalchemy>=2.0.52,<3",
   "uvicorn>=0.52.4",
 ]
 

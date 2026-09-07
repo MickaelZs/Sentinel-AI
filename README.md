@@ -52,6 +52,17 @@ The FastAPI application foundation is available locally with:
 The liveness endpoint is available at `GET /health` and returns the service
 status and package version.
 
+## Persistence
+
+The persistence foundation uses synchronous SQLAlchemy with PostgreSQL and
+Alembic-managed schema migrations. Set `DATABASE_URL` in the environment; copy
+the safe local example in `.env.example` if needed. Apply migrations only to a
+database you explicitly control:
+
+```powershell
+.venv\Scripts\alembic.exe upgrade head
+```
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -61,7 +72,8 @@ committed to this repository.
 ## Status
 
 - Implemented: Git repository, Python package layout, documentation,
-  architecture boundaries, FastAPI application foundation, and `GET /health`.
+  architecture boundaries, FastAPI application foundation, `GET /health`, and
+  PostgreSQL persistence foundation.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
