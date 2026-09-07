@@ -41,6 +41,17 @@ Transaction -> Feature Pipeline -> ML Risk Engine -> Risk Decision
 - Generative AI, LLMs, LangGraph, and controlled tools for agents
 - Automated tests, observability, Docker, CI/CD, and later cloud deployment
 
+## Application
+
+The FastAPI application foundation is available locally with:
+
+```powershell
+.venv\Scripts\uvicorn.exe sentinel_ai.app:app --reload
+```
+
+The liveness endpoint is available at `GET /health` and returns the service
+status and package version.
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
@@ -49,9 +60,8 @@ committed to this repository.
 
 ## Status
 
-- Implemented: Git repository, minimal Python package layout, documentation,
-  architecture boundaries, and the first ADR.
-- In progress: Foundation and specification (Stage 0).
+- Implemented: Git repository, Python package layout, documentation,
+  architecture boundaries, FastAPI application foundation, and `GET /health`.
 - Planned: Data contracts, risk modelling, investigation workflows, application
   interfaces, testing, observability, delivery automation, and deployment.
 
