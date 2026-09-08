@@ -147,6 +147,18 @@ local explanation is available at `POST /api/risk/explain`. See
 [`docs/inference-api.md`](docs/inference-api.md) and
 [`docs/explainability.md`](docs/explainability.md) for their contracts.
 
+## Model monitoring
+
+Run offline monitoring against the canonical train/reference and validation/current
+periods with:
+
+```powershell
+.venv\Scripts\python.exe scripts\run_model_monitoring.py --rows 10000 --seed 42
+```
+
+Use `--simulate-drift` only for the deterministic synthetic drift demonstration.
+See [`docs/model-monitoring.md`](docs/model-monitoring.md).
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
