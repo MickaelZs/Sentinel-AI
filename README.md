@@ -159,6 +159,12 @@ periods with:
 Use `--simulate-drift` only for the deterministic synthetic drift demonstration.
 See [`docs/model-monitoring.md`](docs/model-monitoring.md).
 
+## Investigation Agent
+
+`POST /api/investigations` runs the stateless deterministic LangGraph
+orchestration of scoring, explanation, evidence collection, and review policy.
+See [`docs/investigation-agent.md`](docs/investigation-agent.md).
+
 ## Data policy
 
 Development uses **only public, anonymized, or synthetic data**. Real customer
